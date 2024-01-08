@@ -1,5 +1,5 @@
 node {
-    docker.image('maven:3.9.0') {
+    docker.image('maven') {
         stage('Build') {
             sh 'mvn clean package'
         }

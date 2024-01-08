@@ -1,5 +1,5 @@
 node {
-    docker.image('maven').inside('-p 3000:3000') {
+    docker.image('maven').inside(''-v /root/.m2:/root/.m2'') {
         stage('Build') {
             sh 'mvn clean package'
         }

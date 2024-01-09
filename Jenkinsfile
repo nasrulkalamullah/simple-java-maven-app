@@ -7,7 +7,7 @@ node {
 
         stage('Test') {
             sh 'mvn test'
-            step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/*.xml'])
+            junit 'target/surefire-reports/*.xml'
         }
 
         stage('Deliver') {
